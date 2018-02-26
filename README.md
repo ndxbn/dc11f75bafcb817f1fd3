@@ -40,7 +40,7 @@ repeat
   end note
 repeat while (invalid?)
 
-:result.php
+:store.php
 ファイルに保存する;
 note right
   * CSRF 対策
