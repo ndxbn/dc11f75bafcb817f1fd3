@@ -19,9 +19,11 @@ if (!is_array($errorMessages)) {
     <title>PHP</title>
 </head>
 <body>
+
 <?php foreach ($errorMessages as $message): ?>
     <div><?= e($message) ?></div>
 <?php endforeach; // errorMessages ?>
+
 <form action="check.php" method="post">
     <div>
         <label for="id">識別番号: </label> <input type="text" id="id" name="id" placeholder="半角英数">
@@ -35,5 +37,6 @@ if (!is_array($errorMessages)) {
 
     <button type="submit">OK</button>
 </form>
+
 </body>
 </html>

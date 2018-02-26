@@ -28,6 +28,7 @@ if (kickback($errorMessages)) {
 }
 
 $hash = inputsHash($inputs);
+
 ?>
 <!doctype html>
 <html lang="ja">
@@ -38,6 +39,7 @@ $hash = inputsHash($inputs);
     <title>入力値の確認</title>
 </head>
 <body>
+
 <div>この情報で登録しますが、よろしいですか？</div>
 <div>
     <ul>
@@ -53,5 +55,6 @@ $hash = inputsHash($inputs);
     <input type="hidden" name="x-hash" value="<?= e($hash) ?>">
     <button type="submit">良いので、保存する</button>
 </form>
+
 </body>
 </html>
