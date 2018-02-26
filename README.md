@@ -1,5 +1,16 @@
 nejimawaso 氏の記事[『PHPでフォームに入力された文字をテキストファイルに書き込む』](https://qiita.com/nejimawaso/items/dc11f75bafcb817f1fd3)のコードをみて、自分ならここまでやるっていうのをやってみた。
 
+## とりあえず試してみる
+
+```
+git clone https://github.com/ndxbn/dc11f75bafcb817f1fd3
+cd  dc11f75bafcb817f1fd3
+php -S 0.0.0.0:8080
+```
+
+ブラウザで、 localhost:8089 にアクセス
+
+
 ## 制限事項
 
 以下のものは、使用できないものとする。
