@@ -9,9 +9,30 @@ const SECRET = 'secret_string';
  * @param string $str
  * @return string
  */
-function e(string $str): string
+function e($str): string
 {
     return htmlspecialchars($str, ENT_QUOTES);
+}
+
+/**
+ * POST されてきたデータを、型チェックして展開した配列を返す。
+ *
+ * check.php と store.php でコピペが発生したので、関数に切り出した。
+ *
+ * @return array
+ * @throws TypeError POST じゃなかった場合に、こいつが TypeError を返す
+ */
+function getInputs(): array
+{
+
+    /** POST されてくる値と、それらの Validation ルール */
+    $inputsArgs = [
+        'id' => FILTER_DEFAULT,
+        'mail' => FILTER_SANITIZE_EMAIL, // FILTER_VALIDATE_EMAIL だと、RFC に準拠していない某ドコモとかのメアドが死ぬので。
+        'mail-confirm' => FILTER_SANITIZE_EMAIL
+    ];
+
+    return filter_input_array(INPUT_POST, $inputsArgs, false);
 }
 
 /**
@@ -20,7 +41,7 @@ function e(string $str): string
  * @param array $inputs
  * @return string
  */
-function inputsHash(array $inputs): string
+function inputsHash($inputs): string
 {
     $inputsWithSecret = $inputs;
     $inputsWithSecret [] = SECRET;
@@ -37,15 +58,29 @@ function inputsHash(array $inputs): string
  * @param string $hash
  * @return bool
  */
-function validateHash(array $inputs, string $hash): bool
+function validateHash($inputs, $hash): bool
 {
     $expectHash = inputsHash($inputs);
     // 単に `===` を使うと、タイミング攻撃が通る。
     return hash_equals($expectHash, $hash);
 }
 
-
-function redirectTo(string $path)
+function redirectTo(string $path): void
 {
     header("Location: ${path}");
+}
+
+/**
+ * @param string[] $errorMessages
+ * @return bool if true, redirected.
+ */
+function kickback($errorMessages): bool
+{
+    // なにかしらの入力値が invalid
+    if ([] !== $errorMessages) {
+        $query = http_build_query(['error_messages' => $errorMessages]);
+        redirectTo("/index.php?${query}");
+        return true;
+    }
+    return false;
 }
