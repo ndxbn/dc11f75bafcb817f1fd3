@@ -22,7 +22,7 @@ if (!is_array($errorMessages)) {
 <?php foreach($errorMessages as $message): ?>
 <div><?= e($message) ?></div>
 <?php endforeach; // errorMessages ?>
-<form action="check.php" method="POST">
+<form action="check.php" method="post">
     <div>
         <label for="id">識別番号: </label> <input type="text" id="id" name="id" placeholder="半角英数">
     </div>
