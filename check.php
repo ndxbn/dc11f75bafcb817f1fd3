@@ -40,8 +40,10 @@ $hash = inputsHash($inputs);
 <body>
 <div>この情報で登録しますが、よろしいですか？</div>
 <div>
-    <li>識別番号: <?= e($id) ?></li>
-    <li>メールアドレス: <?= e($mail) ?></li>
+    <ul>
+        <li>識別番号: <?= e($id) ?></li>
+        <li>メールアドレス: <?= e($mail) ?></li>
+    </ul>
 </div>
 
 <form action="store.php" method="post">
