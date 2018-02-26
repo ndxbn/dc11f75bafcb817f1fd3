@@ -7,7 +7,7 @@ try {
 } catch (TypeError $e) {
     header('HTTP/1.1  400 Bad Request');
     echo '不正なアクセスです。';
-    return ;
+    return;
 }
 
 // validation

@@ -6,7 +6,7 @@ try {
 } catch (TypeError $e) {
     header('HTTP/1.1  400 Bad Request');
     echo '不正なアクセスです。';
-    return ;
+    return;
 }
 
 $hashString = $_POST['x-hash'] ?? null;
@@ -24,8 +24,8 @@ if (($hashString === null) // 直接このページにアクセスされたら�
 // check.php で validation が通ったものじゃない場合は、x-hash が合わないはずなので、すでに弾かれてるはず。
 // なので、check.php でやったような validation はここでは不要。
 
-if(kickback($errorMessages)) {
-    return ;
+if (kickback($errorMessages)) {
+    return;
 }
 
 file_put_contents("storage/${id}.txt", $mail);

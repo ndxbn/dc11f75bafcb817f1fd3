@@ -19,8 +19,8 @@ if (!is_array($errorMessages)) {
     <title>PHP</title>
 </head>
 <body>
-<?php foreach($errorMessages as $message): ?>
-<div><?= e($message) ?></div>
+<?php foreach ($errorMessages as $message): ?>
+    <div><?= e($message) ?></div>
 <?php endforeach; // errorMessages ?>
 <form action="check.php" method="post">
     <div>
