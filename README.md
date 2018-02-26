@@ -8,7 +8,7 @@ cd  dc11f75bafcb817f1fd3
 php -S 0.0.0.0:8080
 ```
 
-ブラウザで、 localhost:8089 にアクセス
+ブラウザで、 localhost:8080 にアクセス
 
 
 ## 制限事項
