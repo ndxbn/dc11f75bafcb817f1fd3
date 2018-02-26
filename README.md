@@ -1,0 +1,1 @@
+nejimawaso 氏の記事[『PHPでフォームに入力された文字をテキストファイルに書き込む』](https://qiita.com/nejimawaso/items/dc11f75bafcb817f1fd3)のコードをみて、自分ならここまでやるっていうのをやってみた。
