@@ -46,9 +46,8 @@ repeat
   :check.php;
   note right
     * 入力値のValidation
-    * 入力された値は SESSION にもたせる。
-    * このページで変更されると困るので、入力値を input:h に入れるのは不可。
-  end note
+    * session 使えないので、SSL的な改竄チェックの方式を取る
+  end note
 repeat while (invalid?)
 
 :store.php
